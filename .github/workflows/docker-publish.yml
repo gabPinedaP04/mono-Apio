@@ -1,4 +1,4 @@
-name: Docker apio
+name: Docker apio cefe
 
 on:
   push:
