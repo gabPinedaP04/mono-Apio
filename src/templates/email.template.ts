@@ -18,7 +18,7 @@ export function generateCaseEmailTemplate(
       <style>
           body {
               font-family: Arial, sans-serif;
-              background-color: #f4f4f4;
+              background-color: #FF0000;
               color: #333;
               margin: 0;
               padding: 0;

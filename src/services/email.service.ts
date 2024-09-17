@@ -1,6 +1,6 @@
 import nodemailer from 'nodemailer';
 import { envs } from '../config/envs';
-import fetch from 'node-fetch'; // Update to use import
+import fetch from 'node-fetch'; 
 
 const transporter = nodemailer.createTransport({
   service: envs.MAILER_SERVICE,
@@ -10,7 +10,6 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// Function to generate Mapbox image URL
 const getMapboxImageUrl = (lat: number, lng: number) => {
   const accessToken = process.env.MAPBOX_ACCESS_TOKEN;
   const zoom = 17;
@@ -23,8 +22,8 @@ const getMapboxImageUrl = (lat: number, lng: number) => {
 
 export const sendEmail = async (subject: string, htmlBody: string) => {
   const mailOptions = {
-    from: envs.MAILER_EMAIL, // Sender address
-    to: envs.MAILER_EMAIL,   // Recipient address
+    from: envs.MAILER_EMAIL, 
+    to: envs.MAILER_EMAIL,   
     subject,
     html: htmlBody,
   };

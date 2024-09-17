@@ -3,7 +3,7 @@ import { createCase, getAllCases, getRecentCases, updateCase, deleteCase } from 
 
 const router = Router();
 
-// Rutas CRUD para los casos
+
 router.post('/cases', createCase);
 router.get('/cases', getAllCases);
 router.get('/cases/recent', getRecentCases);

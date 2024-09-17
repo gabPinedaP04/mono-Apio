@@ -76,8 +76,8 @@ export const deleteCase = async (req: Request, res: Response) => {
       return res.status(404).json({ message: 'Caso no encontrado' });
     }
 
-    res.status(200).json({ message: 'Caso eliminado' });
+    res.status(200).json({ message: ' eliminado' });
   } catch (error) {
-    res.status(500).json({ message: 'Error al eliminar el caso', error });
+    res.status(500).json({ message: 'Error ', error });
   }
 };

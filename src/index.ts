@@ -7,6 +7,7 @@ import CaseModel from './models/case.model';
 import { envs } from './config/envs';
 import { generateCaseEmailTemplate } from './templates/email.template';
 
+//Index bd mongo
 const app: Application = express();
 const PORT = envs.PORT;
 
@@ -20,14 +21,14 @@ mongoose.connect(envs.MONGO_URL)
     console.error('Error connecting to MongoDB:', err);
   });
 
-// Rutas de la API
+
 app.use(caseRoutes);
 
 app.get('/', (req, res) => {
   res.send('API for Viruela del Mono');
 });
 
-//CRON  
+
 cron.schedule('*/10 * * * * *', async () => {
   try {
     console.log('Esperando a que se registren casos...');
@@ -53,7 +54,6 @@ cron.schedule('*/10 * * * * *', async () => {
     
       await sendEmail('Nuevo caso registrado', emailBody);
     
-      // Actualizar el campo isSent a true después de enviar el correo
       caseItem.isSent = true;
       await caseItem.save();
     
