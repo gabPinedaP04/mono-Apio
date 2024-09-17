@@ -24,5 +24,5 @@ jobs:
 
       - name: Push Docker image
         run: |
-          docker build -t ${{ gabrielp04 }}/viruela-api:latest .
-          docker push ${{ gabrielp04 }}/viruela-api:latest
+          docker push gabrielp04/viruela-api:${{ github.sha }}
+          docker push gabrielp04/viruela-api:latest
